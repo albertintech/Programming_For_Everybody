@@ -1,7 +1,12 @@
 hrs = input("Enter Hours:")
-h = float(hrs)
 rph = input("Enter rate:")
-r = float(rph)
+try:
+    h = float(hrs)
+    r = float(rph)
+except:
+    print("Error. Need numeric input. Please try again.")
+    print("End program.")
+    quit()
 
 if h <= 40:
     result = h * r
