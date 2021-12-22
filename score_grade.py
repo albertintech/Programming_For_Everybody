@@ -19,4 +19,3 @@ elif score >= 0.6:
     print("D")
 else:
     print("F")  
-
