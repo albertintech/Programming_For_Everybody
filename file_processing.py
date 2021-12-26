@@ -1,6 +1,6 @@
 """Notes taken while watching the File Processing lecture. This file is not meant to be run!"""
 
-# pylint: disable=invalid-name
+# pylint: disable=invalid-name, missing-docstring, line-too-long, unspecified-encoding
 
 # pattern
 xfile = open('mbox.text')
@@ -25,7 +25,7 @@ print(len(inp))  # >>> 94626
 file_name = input("Enter the file name: ")
 try:
     fhand = open(file_name)
-except:
+except TypeError:
     print("File cannot be opened:", file_name)
     quit()
 count = 0
