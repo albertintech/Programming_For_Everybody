@@ -8,5 +8,12 @@ for line in fh:
     words = line.split()
     for word in words:
         counts[word] = counts.get(word, 0) + 1
+tmp = list()
 for k, v in counts.items():
-    print(k + ":", v)
+    tmp.append((v, k))
+# print(tmp)
+tmp = sorted(tmp, reverse=True)
+print(tmp)
+print("Word\t\tCount")
+for k, v in tmp[:10]:
+    print(f"{v}:\t\t{k}")
