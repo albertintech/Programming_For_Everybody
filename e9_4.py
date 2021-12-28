@@ -19,10 +19,14 @@
 fname = input("Enter file name: ")
 fh = open(fname)
 
-lst = list()
-count = 0
+emails = list()
+counts = dict()
 for line in fh:
     if line.startswith("From ") and not line.startswith("From:"):
         lst = line.split()
-        print(lst[1])
-        count += 1
+        emails.append(lst[1])
+for email in emails:
+    counts[email] = counts.get(email, 0) + 1
+highest = max(counts, key=counts.get)
+
+print(highest, counts[highest])
