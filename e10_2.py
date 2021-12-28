@@ -21,12 +21,28 @@
 fname = input("Enter file name: ")
 fh = open(fname)
 
-emails = list()
+times = list()
+hours = list()
+hour = list()
 counts = dict()
+
 for line in fh:
     if line.startswith("From ") and not line.startswith("From:"):
         lst = line.split()
-        emails.append(lst[1])
-for email in emails:
-    counts[email] = counts.get(email, 0) + 1
-highest = max(counts, key=counts.get)
+        times.append(lst[5])
+# print(times)  # the list of each hh:mm:ss
+for time in times:
+    hours = time.split(":")
+    hour.append(hours[0])
+# print(hour)  # the list of each hh
+for number in hour:
+    counts[number] = counts.get(number, 0) + 1
+# print(counts)
+tmp = list()
+for k, v in counts.items():
+    tmp.append((k, v))
+# print(tmp)
+tmp = sorted(tmp)
+# print(tmp)
+for k, v in tmp:
+    print(f"{k} {v}")
