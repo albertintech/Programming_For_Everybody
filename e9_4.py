@@ -15,3 +15,14 @@
 # Use a dictionary to track emails to counts
 # Use a loop to find the highest email count and corresponding address
 # Print email and count number of highest sender => cwen@iupui.edu 5
+
+fname = input("Enter file name: ")
+fh = open(fname)
+
+lst = list()
+count = 0
+for line in fh:
+    if line.startswith("From ") and not line.startswith("From:"):
+        lst = line.split()
+        print(lst[1])
+        count += 1
