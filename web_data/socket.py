@@ -1,4 +1,7 @@
+# pylint: disable=invalid-name, not-callable, no-member, import-self
+
 """Demonstration of Python's built-in support for TCP Sockets"""
+
 
 import socket
 
