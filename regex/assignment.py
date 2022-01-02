@@ -2,12 +2,12 @@
 # pylint: disable=unspecified-encoding
 import re
 
-# handle = open('42.txt')
-fname = input("Enter file name: ")
-handle = open(fname, encoding='UTF-8')
+handle = open('42.txt', encoding='UTF-8')
+
+x = list()
 
 for line in handle:
     line = line.rstrip()
-    x = re.findall('[0-9]+', line)
+    x = int(re.findall('[0-9]+', line))
     if len(x) > 0:
         print(x)
