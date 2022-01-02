@@ -1,13 +1,25 @@
-"""Assignment for 'Using Python to Access Web Data'"""
+
+"""Assignment: Finding Numbers in a Haystack"""
+
 # pylint: disable=unspecified-encoding
+
+# input: string type
+# output: integer type
+# requirements: find every number and their sum total
+# Algo:
+# open file
+# Find integers
+# Convert string ints to interger type
+# Add all ints and find sum
+
 import re
-
-handle = open('42.txt', encoding='UTF-8')
-
-x = list()
-
+handle = open('97.txt', encoding='UTF-8')
+lst = list()
 for line in handle:
     line = line.rstrip()
-    x = int(re.findall('[0-9]+', line))
+    x = re.findall('[0-9]+', line)
     if len(x) > 0:
-        print(x)
+        lst += x
+int_lst = list()
+int_lst = [int(i) for i in lst]
+print(sum(int_lst))
